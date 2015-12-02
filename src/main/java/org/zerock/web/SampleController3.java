@@ -18,11 +18,11 @@ public class SampleController3 {
 	public @ResponseBody MemberVO doJSON(){
 		
 		MemberVO vo = new MemberVO();
-        vo.setUserid("jisub");
-        vo.setUpw("jisub");
-        vo.setUname("111");
-        vo.setEmail("111@naver.com");
-        vo.setPhone("011-777-3943");
+        vo.setUserid("doyoon");
+        vo.setUpw("user90");
+        vo.setUname("dodo");
+        vo.setEmail("wowo@naver.com");
+        vo.setPhone("010-777-3943");
         vo.setGender("f");
 		
         return vo;

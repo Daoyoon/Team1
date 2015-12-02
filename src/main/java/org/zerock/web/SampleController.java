@@ -20,5 +20,10 @@ public class SampleController {
 		
 		logger.info("doB.............................");
 	}
+	@RequestMapping("doT")
+	public void doT(){
+		// jisub 
+		logger.info("doT.............................");
+	}
 	
 }
