@@ -3,11 +3,12 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="org.team.persistence.BoardMapper">
+<mapper namespace="org.team.dao.BoardMapper">
 
-	<select id="list" resultType="org.team.domain.BoardVO">
+	<select id="list" resultMap="resultset">
 		select * from tbl_board
 	</select>
+	<resultMap type="org.team.domain.BoardVO" id="resultset"></resultMap>
 	
 	<insert id="create">
 		insert into tbl_board (bno, title, content, writer) values (seq_board.nextval, #{title}, #{content}, #{writer})
