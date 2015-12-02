@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.team.persistence.BoardMapper">
+
+	<select id="list" resultType="org.team.domain.BoardVO">
+		select * from tbl_board
+	</select>
+	
+	<insert id="create">
+		insert into tbl_board (bno, title, content, writer) values (seq_board.nextval, #{title}, #{content}, #{writer})
+	</insert>
+	
+	<select id="read" resultType="org.team.domain.BoardVO">
+		select * from tbl_board where bno=#{bno}
+	</select>
+	
+	<update id="update">
+		update tbl_board set title = #{title}, content = #{content},writer = #{writer}, updatedate = sysdate where bno=#{bno}
+	</update>
+	
+	<delete id="delete">
+		delete from tbl_board where bno=#{bno}
+	</delete>
+</mapper>
