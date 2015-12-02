@@ -33,4 +33,10 @@ public class SampleController2 {
 		logger.info("doG..................");
 	}
 	//TEST용 메소드 추가.
+	
+	@RequestMapping("/doF")
+	public void doH(){
+		
+		logger.info("doH..................");
+	}
 }
