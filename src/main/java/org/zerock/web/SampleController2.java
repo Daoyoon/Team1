@@ -26,4 +26,4 @@ public class SampleController2 {
 		logger.info("doF..................");
 	}
 	
-}
+}//수정 테스트중
