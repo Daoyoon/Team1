@@ -10,6 +10,8 @@ import org.zerock.domain.MemberVO;
 @Controller
 public class SampleController3 {
 	
+	// 커밋 테스트
+	
 	
 	private final static Logger logger = LoggerFactory.getLogger(SampleController3.class);
 	
