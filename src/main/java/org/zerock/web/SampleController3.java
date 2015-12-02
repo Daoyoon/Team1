@@ -37,5 +37,8 @@ public class SampleController3 {
 	public void jae(){
 		MemberVO vo = new MemberVO();
 	}
+	public void ja2(){
+		MemberVO vo = new MemberVO();
+	}
 	
 }
