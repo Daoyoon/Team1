@@ -22,27 +22,12 @@ public class SampleController3 {
 		MemberVO vo = new MemberVO();
         vo.setUserid("doyoon");
         vo.setUpw("user90");
-        vo.setUname("nana");
+        vo.setUname("dodo");
         vo.setEmail("wowo@naver.com");
         vo.setPhone("010-777-3943");
         vo.setGender("f");
-        
-        //difficult
-        //어려워
-        //이제는 되려나
-        
 		
         return vo;
 	}
-	public void jae(){
-		MemberVO vo = new MemberVO();
-	}
-	public void ja2(){
-		MemberVO vo = new MemberVO();
-	}
-	public void jae3(){
-		MemberVO vo = new MemberVO();
-	}
-	
 	
 }
