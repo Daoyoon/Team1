@@ -33,4 +33,6 @@ public class SampleController2 {
 		logger.info("doG..................");
 	}
 	//TEST용 메소드 추가.
+	
+	//My Name is Young-jun
 }
