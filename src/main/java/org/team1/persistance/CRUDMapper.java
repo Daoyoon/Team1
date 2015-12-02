@@ -2,7 +2,7 @@ package org.team1.persistance;
 
 import java.util.List;
 
-public interface CRUDInterface<V,K> {
+public interface CRUDMapper<V,K> {
 
 	public void create(V vo) throws Exception;
 	public V read(K key) throws Exception;
