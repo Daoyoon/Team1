@@ -6,9 +6,8 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.team.domain.BoardVO;
 
-abstract class AbstractCRUDMapper<V, K> implements CRUDMapper<V, K> {
+public abstract class AbstractCRUDMapper<V, K> implements CRUDMapper<V, K> {
 
 	@Autowired
 	protected SqlSession session;

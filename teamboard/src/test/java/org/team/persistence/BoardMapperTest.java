@@ -4,6 +4,7 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.team.dao.BoardMapper;
 import org.team.domain.BoardVO;
 
 public class BoardMapperTest extends DataSourceTest {
