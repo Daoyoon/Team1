@@ -24,6 +24,8 @@ public class SampleController3 {
         vo.setEmail("wowo@naver.com");
         vo.setPhone("010-777-3943");
         vo.setGender("f");
+        
+        //difficult
 		
         return vo;
 	}
