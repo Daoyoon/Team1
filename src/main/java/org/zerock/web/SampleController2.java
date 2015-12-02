@@ -34,5 +34,5 @@ public class SampleController2 {
 	}
 	//TEST용 메소드 추가.
 	
-	//My Name is Young-jun
+	//My Name is Lee Young-jun
 }
