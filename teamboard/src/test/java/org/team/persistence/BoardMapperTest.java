@@ -28,13 +28,13 @@ public class BoardMapperTest extends DataSourceTest {
 	
 	@Test
 	public void readTest() throws Exception{
-		System.out.println(mapper.read(117));
+		System.out.println(mapper.read(1769645));
 	}
 	
 	@Test
 	public void update() throws Exception{
 		BoardVO vo = new BoardVO();
-		vo.setBno(117);
+		vo.setBno(1769645);
 		vo.setTitle("update");
 		vo.setContent("update");
 		vo.setWriter("update");
@@ -43,6 +43,6 @@ public class BoardMapperTest extends DataSourceTest {
 
 	@Test
 	public void delete() throws Exception{
-		mapper.delete(117);
+		mapper.delete(1769645);
 	}
 }
