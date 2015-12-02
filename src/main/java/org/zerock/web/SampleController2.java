@@ -20,10 +20,17 @@ public class SampleController2 {
 		rttr.addFlashAttribute("msg", "SUCCESS");
 		return "redirect:/doF";
 	}
+	
 	@RequestMapping("/doF")
 	public void doF(){
 		
 		logger.info("doF..................");
 	}
 	
+	@RequestMapping("/doF")
+	public void doG(){
+		
+		logger.info("doG..................");
+	}
+	//TEST용 메소드 추가.
 }
