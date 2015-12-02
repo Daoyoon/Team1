@@ -30,8 +30,12 @@ public class SampleController3 {
         //difficult
         //어려워
         //이제는 되려나
+        
 		
         return vo;
+	}
+	public void jae(){
+		MemberVO vo = new MemberVO();
 	}
 	
 }
