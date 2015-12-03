@@ -36,7 +36,7 @@ public class BoardController {
 	@RequestMapping(value="/view", method = RequestMethod.GET)
 	public void view(int key,Model model)throws Exception{
 	
-	
+	System.out.println(key);
 		
 	model.addAttribute("board", service.read(key));
 		
