@@ -7,7 +7,7 @@
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
 		<h1>
-			List Page <small>Control panel</small>
+			List Page <small>Total=${pagemaker.totalCount}</small>
 		</h1>
 		<hr align="left" style="border:solid 1px #CCCCCC; width:200px;">
 		<ol class="breadcrumb">
@@ -53,8 +53,30 @@
 		</div>
 	</section>
 	<!-- /.content -->
+	<div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                      <c:if test="${pagemaker.prev}">
+                    <li>
+                        <a href="/board/list?page=${pagemaker.starpage - 1}">«</a>
+                    </li>
+                    </c:if>
+                    <c:forEach var="x" begin="${pagemaker.startpage}" end="${pagemaker.endpage}" >
+                    <li class="active">
+                        <a href="/board/list?page=${x}">${x}</a>
+                    </li>
+                    </c:forEach>
+                    <c:if test="${pagemaker.next}">
+                    <li>
+                        <a href="/board/list?page=${pagemaker.endpage + 1}">»</a>
+                    </li>
+                    </c:if>
+                </ul>
+            </div>
+        </div>
 </div>
 <!-- /.content-wrapper -->
+
 
 <%@include file="../include/footer.jsp"%>
 <script>
