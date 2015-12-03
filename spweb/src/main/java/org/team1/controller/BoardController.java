@@ -34,11 +34,11 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="/view", method = RequestMethod.GET)
-	public void view(int key,Model model)throws Exception{
+	public void view(int bno,Model model)throws Exception{
 	
-	System.out.println(key);
+	System.out.println(bno);
 		
-	model.addAttribute("board", service.read(key));
+	model.addAttribute("board", service.read(bno));
 		
 //		return "/board/view";
 	}
@@ -47,12 +47,27 @@ public class BoardController {
 		
 	}
 	@RequestMapping(value="/create", method = RequestMethod.POST)
-	public String createPost(BoardVO vo, Model model)throws Exception{
+	public String createPost(BoardVO vo)throws Exception{
 		System.out.println(vo.getTitle());
 		service.create(vo);
 		
 		return "redirect:/board/list";
 	}
-
 	
+	@RequestMapping(value="/modify", method = RequestMethod.GET)
+	public void modify(int bno,Model model)throws Exception{
+		System.out.println(bno);
+		model.addAttribute("board", service.read(bno));
+	}
+	@RequestMapping(value="/modify", method = RequestMethod.POST)
+	public String modifyPost(BoardVO vo)throws Exception{
+		service.update(vo);
+		return "redirect:/board/list";
+	}
+	
+	@RequestMapping(value="/delete", method = RequestMethod.POST)
+	public String delete(int bno)throws Exception{
+		service.delete(bno);
+		return "redirect:/board/list";
+	}	
 }
