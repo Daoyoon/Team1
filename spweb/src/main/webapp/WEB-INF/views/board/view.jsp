@@ -7,7 +7,7 @@
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
 		<h1>
-			List Page <small>Control panel</small>
+			View Page <small>Control panel</small>
 		</h1>
 		
 		<hr align="left">
@@ -21,19 +21,20 @@
 	<section class="content">
 
 		<div class="row">
-			<c:forEach var="boardVO" items="${list}">
+		
 				<div class="col-sm-4 col-lg-4 col-md-4" style="width: 430px">
 					<div class="thumbnail">
 						<img src="http://placehold.it/320x150" alt="">
 						<div class="caption">
 							<h4 class="pull-right">[댓글수]</h4>
 							<h4>
-								<a href="/board/view?bno=${boardVO.bno}">${boardVO.title}</a>
+								<a href="/board/view?bno=${board.bno}">${board.title}</a>
 							</h4>
-							<p>${boardVO.content}</p>
+							<p>${board.content}</p>
 						</div>
 						<div class="ratings">
-							<p class="pull-right">조회수${boardVO.hit}</p>
+							<p class="pull-right">조회수${board.hit}</p>
+							<p class="pull-right">등록일${board.regdate}</p>
 							<p>
 								<span class="glyphicon glyphicon-star"></span> <span
 									class="glyphicon glyphicon-star"></span> <span
@@ -44,7 +45,7 @@
 						</div>
 					</div>
 				</div>
-			</c:forEach>
+		
 
 		</div>
 	</section>

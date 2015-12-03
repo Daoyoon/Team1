@@ -47,5 +47,22 @@ public class BoardController {
 		return "/board/list";
 	}
 	
+	@RequestMapping(value="/view", method = RequestMethod.GET)
+	public String view(Model model)throws Exception{
 	
+		BoardVO vo = new BoardVO();
+		vo.setBno(1);
+		vo.setContent("\\#"
+				+"AAA");
+		vo.setHit(30);
+		vo.setRegdate(new Date(2015, 3, 1));
+		vo.setUpdatedate(vo.getRegdate());
+		vo.setTitle("title");
+		vo.setWriter("woonsik");
+		System.out.println(vo.toString());
+		
+	model.addAttribute("board", vo);
+		
+		return "/board/view";
+	}
 }
