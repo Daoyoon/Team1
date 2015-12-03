@@ -16,44 +16,36 @@ public class BoardServiceImpl implements BoardService<BoardVO, Integer> {
 
 	@Override
 	public List<BoardVO> listAll() throws Exception {
-
 		return mapper.listAll();
 	}
 
 	@Override
 	public List<BoardVO> listpage() throws Exception {
-
 		return mapper.listpage();
 	}
 
 	@Override
 	public void create(BoardVO vo) throws Exception {
 		mapper.create(vo);
-
 	}
 
 	@Override
 	public BoardVO read(Integer bno) throws Exception {
-
 		return mapper.read(bno);
 	}
 
 	@Override
 	public void delete(Integer bno) throws Exception {
 		mapper.delete(bno);
-
 	}
 
 	@Override
 	public void update(BoardVO vo) throws Exception {
 		mapper.update(vo);
-
 	}
 
 	@Override
 	public void hit(Integer bno) throws Exception {
-		
-		mapper.hit(bno);
-
+			mapper.hit(bno);
 	}
 }

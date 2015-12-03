@@ -16,8 +16,7 @@ public interface BoardService<V, K> {
    public void delete(K key)throws Exception;
    
    public void update(V vo)throws Exception;
-   
-   
+    
    public List<V> listpage() throws Exception;
    
    public void hit(K key)throws Exception;
