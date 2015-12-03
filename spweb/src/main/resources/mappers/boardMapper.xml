@@ -10,6 +10,11 @@
 	</select>
 	<resultMap type="org.team1.domain.BoardVO" id="resultset"></resultMap>
 	
+	<select id="listpage" resultMap="resultlist">
+		select * from tbl_board where bno>100000
+	</select>
+	<resultMap type="org.team1.domain.BoardVO" id="resultlist"></resultMap>
+	
 	<insert id="create">
 		insert into tbl_board (bno, title, content, writer) values (seq_board.nextval, #{title}, #{content}, #{writer})
 	</insert>

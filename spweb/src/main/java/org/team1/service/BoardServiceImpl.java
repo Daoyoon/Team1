@@ -19,6 +19,13 @@ public class BoardServiceImpl implements BoardService<BoardVO, Integer> {
       
       return mapper.listAll();
    }
+   
+   @Override
+   public List<BoardVO> listpage() throws Exception {
+      
+      return mapper.listpage();
+   }
+   
 
    @Override
    public void create(BoardVO vo) throws Exception {
