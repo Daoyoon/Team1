@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 이 세줄을 갖다놓은 이유는 컨트롤스페이스바를 이용한 개발을 위해서. -->
+
+
+<mapper namespace="org.june.dao.TimeMapper">
+	<select id="getTime" resultType="string">
+		select sysdate from dual
+	</select>
+</mapper>
+ 
+ 
