@@ -9,7 +9,7 @@
       <h1>
          Create Page
       </h1>
-      
+      <hr align="left" style="border:solid 1px #CCCCCC; width:200px;">
       <hr align="left">
       <ol class="breadcrumb">
          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -21,11 +21,11 @@
    <section class="content">
 
       <form action="/board/create" method="post">
-      <p>Title &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name ='title' ></p>
-      <p>Content<input type="text" name ='content' style="height : 200px" size="50"></p>
-      <p>Writer &nbsp;<input type="text" name ='writer'></p>
-      <input type="submit" value="저장">
-   </form>
+	      <p>Title<input type="text" name ='title' ></p>
+	      <p>Content<input type="text" name ='content' style="height : 200px; width:1000px;" size="50"></p>
+	      <p>Writer<input type="text" name ='writer'></p>
+      	<input type="submit" value="저장">
+  	  </form>
    <form action="list">
    <input type="submit" value="취소">
    </form>

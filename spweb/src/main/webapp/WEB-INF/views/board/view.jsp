@@ -27,7 +27,7 @@
 			<div class="col-sm-4 col-lg-4 col-md-4" style="width: 1000px">
 				<div style="border:solid 1px #CCCCCC; background-color: white;">
 					<h4 style="margin-left:20px" >${board.title}</h4>
-					<h5 style="margin-left:20px">${board.writer}</h5>
+					<h5 style="margin-left:20px">작성자:&nbsp;${board.writer}</h5>
 				    <h5 align="right">조회수:${board.hit}&nbsp;|&nbsp;&nbsp;공감:100&nbsp;&nbsp;|&nbsp;&nbsp;${board.regdate}&nbsp;</h5>
 				</div>	
 			</div>
@@ -68,7 +68,7 @@
 	    	</div>
 		</div>
 			<div>
-				<form action="/board/modify">
+				<form action="/board/modify" >
 					<input type="hidden" name="bno" value="${board.bno}">
 					<input type="submit" value="수정">
 				</form>

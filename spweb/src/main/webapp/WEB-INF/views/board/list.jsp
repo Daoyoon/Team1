@@ -9,20 +9,19 @@
 		<h1>
 			List Page <small>Control panel</small>
 		</h1>
-		
+		<hr align="left" style="border:solid 1px #CCCCCC; width:200px;">
 		<hr align="left">
 		<ol class="breadcrumb">
 			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
 			<li class="active">Dashboard</li>
 		</ol>
 	</section>
-	
-	<a href="/board/create">글쓰기</a>
 
 	<!-- Main content -->
 	<section class="content">
 
 		<div class="row">
+		    
 			<c:forEach var="boardVO" items="${list}">
 				<div class="col-sm-4 col-lg-4 col-md-4" style="width: 430px">
 					<div class="thumbnail">
@@ -47,7 +46,10 @@
 					</div>
 				</div>
 			</c:forEach>
-
+			
+		</div>
+		<div class="pull-right" style="margin-right:150px">
+			<button><a href="/board/create">글쓰기</a></button>
 		</div>
 	</section>
 	<!-- /.content -->
