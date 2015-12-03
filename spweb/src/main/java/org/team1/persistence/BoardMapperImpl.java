@@ -21,4 +21,10 @@ public class BoardMapperImpl extends AbstractCRUDMapper<BoardVO, Integer> implem
 		
 	}
 
+	@Override
+	public int totalcount() throws Exception {
+		return session.selectOne(namespace+".totalcount");
+		
+	}
+
 }

@@ -9,4 +9,6 @@ public interface BoardMapper extends CRUDMapper<BoardVO, Integer> {
 	public List<BoardVO> listpage() throws Exception;
 	
 	public void hit(Integer bno)throws Exception;
+	
+	public int totalcount() throws Exception;
 }

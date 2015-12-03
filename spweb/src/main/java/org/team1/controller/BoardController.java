@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.team1.domain.BoardVO;
+import org.team1.domain.PageMaker;
 import org.team1.service.BoardService;
 
 @Controller
@@ -17,13 +19,17 @@ public class BoardController {
 	@Autowired
 	private BoardService service;
 	
+
+	
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
 	@RequestMapping(value="/list", method = RequestMethod.GET)
-	public void listAll(Model model)throws Exception{
+	public void listAll(@RequestParam(value="page",required=false) Integer page,Model model)throws Exception{
 		logger.info("list........");
-		
+		PageMaker pagemaker = new PageMaker(page, service.totalcount());
+		System.out.println(pagemaker.toString());
 		model.addAttribute("list",service.listpage());
+		model.addAttribute("pagemaker",pagemaker);
 //		model.addAttribute("list", service.listAll());
 		
 //		return "/board/list";

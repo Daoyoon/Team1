@@ -48,4 +48,10 @@ public class BoardServiceImpl implements BoardService<BoardVO, Integer> {
 	public void hit(Integer bno) throws Exception {
 			mapper.hit(bno);
 	}
+
+	@Override
+	public int totalcount() throws Exception {
+		mapper.totalcount();
+		return 0;
+	}
 }

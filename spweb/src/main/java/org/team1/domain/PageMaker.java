@@ -28,19 +28,115 @@ public class PageMaker {
 	private void makeCriteria(Integer page, Integer totalCount) {
 		if(page==null){
 			this.page=1;
+		}else{
+			this.page=page;
 		}
-		this.endpage=(int) ((Math.ceil(this.page/perPagenum))*perPagenum);
+		this.endpage=(int)((Math.ceil(this.page/perPagenum))*perPagenum);
 		this.startpage = (int) (endpage-perPagenum+1);
+		
 		if(startpage > 1){
 			prev = true;
 		}
 		if(totalCount == null){
 			this.totalCount = 0;
-			
+			this.endpage=1;
+			return;
+		}else{
+			this.totalCount=totalCount;
 		}
 		if(endpage*perPagenum >= this.totalCount){
 			this.next=false;
-			this.endpage=(int) (Math.ceil(totalCount/perListNum));
+			this.endpage=(int)((Math.ceil((Math.ceil(totalCount/perListNum))/perPagenum))*perPagenum);
 		}
+		
 		}
+
+	public int getPage() {
+		return page;
+	}
+
+
+	public void setPage(int page) {
+		this.page = page;
+	}
+
+
+	public int getStartpage() {
+		return startpage;
+	}
+
+
+	public void setStartpage(int startpage) {
+		this.startpage = startpage;
+	}
+
+
+	public int getEndpage() {
+		return endpage;
+	}
+
+
+	public void setEndpage(int endpage) {
+		this.endpage = endpage;
+	}
+
+
+	public int getTotalCount() {
+		return totalCount;
+	}
+
+
+	public void setTotalCount(int totalCount) {
+		this.totalCount = totalCount;
+	}
+
+
+	public int getPerListNum() {
+		return perListNum;
+	}
+
+
+	public void setPerListNum(int perListNum) {
+		this.perListNum = perListNum;
+	}
+
+
+	public double getPerPagenum() {
+		return perPagenum;
+	}
+
+
+	public void setPerPagenum(double perPagenum) {
+		this.perPagenum = perPagenum;
+	}
+
+
+	public boolean isNext() {
+		return next;
+	}
+
+
+	public void setNext(boolean next) {
+		this.next = next;
+	}
+
+
+	public boolean isPrev() {
+		return prev;
+	}
+
+
+	public void setPrev(boolean prev) {
+		this.prev = prev;
+	}
+
+
+	@Override
+	public String toString() {
+		return "PageMaker [page=" + page + ", startpage=" + startpage + ", endpage=" + endpage + ", totalCount="
+				+ totalCount + ", perListNum=" + perListNum + ", perPagenum=" + perPagenum + ", next=" + next
+				+ ", prev=" + prev + "]";
+	}
+	
+	
 }

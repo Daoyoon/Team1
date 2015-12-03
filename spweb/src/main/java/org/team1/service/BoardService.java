@@ -21,5 +21,6 @@ public interface BoardService<V, K> {
    
    public void hit(K key)throws Exception;
 
+   public int totalcount() throws Exception;
 
 }
