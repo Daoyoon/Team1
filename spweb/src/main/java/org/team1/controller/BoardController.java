@@ -22,7 +22,7 @@ public class BoardController {
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
 	@RequestMapping(value="/list", method = RequestMethod.GET)
-	public String listAll(Model model)throws Exception{
+	public void listAll(Model model)throws Exception{
 		logger.info("list........");
 		
 		List<BoardVO> lists = new ArrayList<>();
@@ -44,11 +44,11 @@ public class BoardController {
 		model.addAttribute("list",lists);
 //		model.addAttribute("list", service.listAll());
 		
-		return "/board/list";
+//		return "/board/list";
 	}
 	
 	@RequestMapping(value="/view", method = RequestMethod.GET)
-	public String view(Model model)throws Exception{
+	public void view(Model model)throws Exception{
 	
 		BoardVO vo = new BoardVO();
 		vo.setBno(1);
@@ -63,6 +63,12 @@ public class BoardController {
 		
 	model.addAttribute("board", vo);
 		
-		return "/board/view";
+//		return "/board/view";
 	}
+	@RequestMapping(value="/create", method = RequestMethod.GET)
+	public void create(Model model)throws Exception{
+		
+	}
+
+	
 }

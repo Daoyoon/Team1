@@ -16,6 +16,8 @@
 			<li class="active">Dashboard</li>
 		</ol>
 	</section>
+	
+	<a href="/board/create">글쓰기</a>
 
 	<!-- Main content -->
 	<section class="content">

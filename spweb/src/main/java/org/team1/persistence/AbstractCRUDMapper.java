@@ -41,7 +41,7 @@ public abstract class AbstractCRUDMapper<V, K> implements CRUDMapper<V, K> {
 	
 	@Override
 	public List<V> listAll() throws Exception{
-		return session.selectList(namespace+".list"); 
+		return session.selectList(namespace+".listAll"); 
 	}
 	
 }
