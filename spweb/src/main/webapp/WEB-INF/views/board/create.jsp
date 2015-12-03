@@ -26,7 +26,7 @@
   	   
 		  <input type="hidden" name="bno" value="${board.bno}">
 		  <input id="cre" type="button" value="저장">
-		  <input id="cancle" type="button" value="취소">
+		  <input id="cancel" type="button" value="취소">
 	   </form>
 			
    
@@ -44,7 +44,7 @@
         target.method="post";
         target.submit();
     });
-    $("#cancle").click(function(){
+    $("#cancel").click(function(){
         target.action="/board/list";
         target.submit();
     });
