@@ -11,7 +11,7 @@
 	</appender>
 	<appender name="rollingFile" class="org.apache.log4j.RollingFileAppender">
 		<!-- 로그 파일명 정의를 위한 parameter -->
-		<param name="File" value="/Users/Young-jun/Documents/log/web.log" />
+		<param name="File" value="C:/zzz/web.log" />
 		<!-- 이전 로그 파일에 로그를 덧붙여 쓸 것인지를 정의하기 위한 parameter -->
 		<param name="Append" value="true" />
 		<layout class="org.apache.log4j.PatternLayout">
