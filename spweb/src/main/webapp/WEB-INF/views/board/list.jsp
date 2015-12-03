@@ -25,7 +25,8 @@
 			<c:forEach var="boardVO" items="${list}">
 				<div class="col-sm-4 col-lg-4 col-md-4" style="width: 430px">
 					<div class="thumbnail">
-						<img src="http://placehold.it/320x150" alt="">
+						<!-- <ul style="margin-left:150px; width:102;height:70px;"> -->
+						<img src="img/mina.jpeg" style="width:320px; height:150px;">
 						<div class="caption">
 							<h4 class="pull-right">[댓글수]</h4>
 							<h4>
