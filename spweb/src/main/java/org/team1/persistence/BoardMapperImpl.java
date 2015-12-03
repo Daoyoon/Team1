@@ -9,9 +9,9 @@ import org.team1.domain.BoardVO;
 public class BoardMapperImpl extends AbstractCRUDMapper<BoardVO, Integer> implements BoardMapper {
 
 	@Override
-	public List<BoardVO> listpage() throws Exception {
+	public List<BoardVO> listpage(int page) throws Exception {
 
-		return session.selectList(namespace+".listpage");
+		return session.selectList(namespace+".listpage",page);
 	}
 
 	@Override

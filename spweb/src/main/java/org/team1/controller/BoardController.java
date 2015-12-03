@@ -28,7 +28,7 @@ public class BoardController {
 		logger.info("list........");
 		PageMaker pagemaker = new PageMaker(page, service.totalcount());
 		System.out.println(pagemaker.toString());
-		model.addAttribute("list",service.listpage());
+		model.addAttribute("list",service.listpage(pagemaker.getPage()));
 		model.addAttribute("pagemaker",pagemaker);
 //		model.addAttribute("list", service.listAll());
 		

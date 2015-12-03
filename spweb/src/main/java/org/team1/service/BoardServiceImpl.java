@@ -20,8 +20,8 @@ public class BoardServiceImpl implements BoardService<BoardVO, Integer> {
 	}
 
 	@Override
-	public List<BoardVO> listpage() throws Exception {
-		return mapper.listpage();
+	public List<BoardVO> listpage(int page) throws Exception {
+		return mapper.listpage(page);
 	}
 
 	@Override
@@ -51,7 +51,7 @@ public class BoardServiceImpl implements BoardService<BoardVO, Integer> {
 
 	@Override
 	public int totalcount() throws Exception {
-		mapper.totalcount();
-		return 0;
+		return mapper.totalcount();
+		
 	}
 }
