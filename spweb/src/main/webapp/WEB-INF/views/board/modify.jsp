@@ -9,8 +9,7 @@
       <h1>
          Modify Page
       </h1>
-      
-      <hr align="left">
+	  <hr align="left" style="border:solid 1px #CCCCCC; width:200px;">
       <ol class="breadcrumb">
          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
          <li class="active">Dashboard</li>

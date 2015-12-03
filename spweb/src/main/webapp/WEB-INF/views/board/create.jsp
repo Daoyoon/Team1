@@ -5,7 +5,7 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
    <!-- Content Header (Page header) -->
-   <section class="content-header">
+	<section class="content-header"  style="margin-left:10%">
       <h1>
          Create Page
       </h1>
@@ -17,17 +17,19 @@
    </section>
 
    <!-- Main content -->
-   <section class="content">
+	<section class="content"  style="margin-left:10%">
 
-       <form action="/board/create" method="post">
+       <form id="createform">
 	      <p>Title<input type="text" name ='title' ></p>
 	      <p>Content<input type="text" name ='content' style="height : 200px; width:1000px;" size="50"></p>
 	      <p>Writer<input type="text" name ='writer'></p>
-      	  <input type="submit" value="저장">
-  	   </form>
-	   <form action="list">
-	   	  <input type="submit" value="취소">
+  	   
+		  <input type="hidden" name="bno" value="${board.bno}">
+		  <input id="cre" type="button" value="저장">
+		  <input id="cancle" type="button" value="취소">
 	   </form>
+			
+   
    
    </section>
    <!-- /.content -->
@@ -36,7 +38,16 @@
 
 <%@include file="../include/footer.jsp"%>
 <script>
- 
- </script>
+    var target = $("#createform")[0];
+    $("#cre").click(function(){
+        target.action="/board/create";
+        target.method="post";
+        target.submit();
+    });
+    $("#cancle").click(function(){
+        target.action="/board/list";
+        target.submit();
+    });
+</script>
 </body>
 </html>

@@ -51,8 +51,9 @@
 		</div>
 		<br>
 			<div style="width:1000px;">
-				<form id="viewform" style="margin-left:880px" >
+				<form id="viewform" style="margin-left:805px" >
 				    <input type="hidden" name="bno" value="${board.bno}">
+				    <input id="list" type="button" value="목록가기">
 				    <input id="mod" type="button" value="수정">
 				    <input id="del" type="button" value="삭제">
 				</form>
@@ -74,6 +75,10 @@
 
 <script>
     var target = $("#viewform")[0];
+    $("#list").click(function(){
+        target.action="/board/list";
+        target.submit();
+    });
     $("#mod").click(function(){
         target.action="/board/modify";
         target.submit();

@@ -5,7 +5,7 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper" >
 	<!-- Content Header (Page header) -->
-	<section class="content-header" style="margin-left:5%">
+	<section class="content-header">
 		<h1>
 			List Page <small>Control panel</small>
 		</h1>
@@ -17,15 +17,15 @@
 	</section>
 
 	<!-- Main content -->
-	<section class="content"  style="margin-left:5%">
+	<section class="content" >
 
 		<div class="row">
 		    
 			<c:forEach var="boardVO" items="${list}">
-				<div class="col-sm-4 col-lg-4 col-md-4" style="width: 430px">
+				<div class="col-sm-4 col-lg-4 col-md-4" style="width: 350px;">
 					<div class="thumbnail">
 						<!-- <ul style="margin-left:150px; width:102;height:70px;"> -->
-						<img src="img/mina.jpeg" style="width:320px; height:150px;">
+						<img src="img/mina.jpeg">
 						<div class="caption">
 							<h4 class="pull-right">[댓글수]</h4>
 							<h4>
@@ -48,7 +48,7 @@
 			</c:forEach>
 			
 		</div>
-		<div class="pull-right" style="margin-right:150px">
+		<div class="pull-left">
 			<button><a href="/board/create">글쓰기</a></button>
 		</div>
 	</section>
