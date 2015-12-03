@@ -1,6 +1,6 @@
 package org.team1.domain;
 
-public class Criteria {
+public class PageMaker {
 
 	private int page;
 	private int startpage;
@@ -16,10 +16,10 @@ public class Criteria {
 	private boolean prev;
 	
 	
-	public Criteria(Integer page,Integer totalCount) {
+	public PageMaker(Integer page,Integer totalCount) {
 		this.next=true;
 		this.prev=false;
-		this.perListNum=15;
+		this.perListNum=12;
 		this.perPagenum=5;
 		makeCriteria(page,totalCount);
 	}
@@ -29,16 +29,18 @@ public class Criteria {
 		if(page==null){
 			this.page=1;
 		}
-		if(totalCount == null){
-			this.totalCount = 0;
-		}
-		this.endpage=(int)(((int)Math.ceil(page/perPagenum))*perPagenum);
+		this.endpage=(int) ((Math.ceil(this.page/perPagenum))*perPagenum);
 		this.startpage = (int) (endpage-perPagenum+1);
-		if(startpage != 1){
+		if(startpage > 1){
 			prev = true;
 		}
-		if(endpage <= totalCount){
+		if(totalCount == null){
+			this.totalCount = 0;
 			
+		}
+		if(endpage*perPagenum >= this.totalCount){
+			this.next=false;
+			this.endpage=(int) (Math.ceil(totalCount/perListNum));
 		}
 		}
 }
