@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.team1.domain.BoardVO;
+import org.team1.service.BoardService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
@@ -16,11 +18,20 @@ public class BoardMapperTest {
 	protected static final Logger logger = LoggerFactory.getLogger(BoardMapperTest.class);
 
 	@Autowired
-	private BoardMapper mapper;
+	private BoardService service;
 	
 	@Test
-	public void test() throws Exception {
-		System.out.println(mapper.listAll());
+	public void listTest() throws Exception {
+		System.out.println(service.listAll());
+	}
+	
+	@Test
+	public void createTest() throws Exception{
+		BoardVO vo = new BoardVO();
+		vo.setTitle("가자가자");
+		vo.setContent("어데");
+		vo.setWriter("놀자놀자");
+		service.create(vo);
 	}
 
 }
