@@ -1,4 +1,4 @@
-package org.team1.dao;
+package org.team1.persistence;
 
 public class MemberMapper {
 

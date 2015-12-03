@@ -28,4 +28,6 @@
 	
 	<context:annotation-config></context:annotation-config>
 	<context:component-scan base-package="org.team1.persistence"></context:component-scan>
+	<context:component-scan base-package="org.team1.service"></context:component-scan>
+	
 </beans>
