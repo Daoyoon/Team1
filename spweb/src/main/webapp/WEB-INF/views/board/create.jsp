@@ -22,8 +22,9 @@
        <form id="createform">
 	      <p>Title<input type="text" name ='title' ></p>
 	      <p>Content<input type="text" name ='content' style="height : 200px; width:1000px;" size="50"></p>
-	      <p>Writer<input type="text" name ='writer'></p>
-  	   
+	      <p>Writer<input type="text" name ='writer'></p>	
+	   </form>
+	   <form  id="createform" >
 		  <input type="hidden" name="bno" value="${board.bno}">
 		  <input id="cre" type="button" value="저장">
 		  <input id="cancel" type="button" value="취소">
