@@ -5,16 +5,16 @@
 
 <mapper namespace="org.team1.persistence.BoardMapper">
 
-	<select id="list" resultMap="resultset">
+	<select id="listAll" resultMap="resultset">
 		select * from tbl_board
 	</select>
-	<resultMap type="org.team.domain.BoardVO" id="resultset"></resultMap>
+	<resultMap type="org.team1.domain.BoardVO" id="resultset"></resultMap>
 	
 	<insert id="create">
 		insert into tbl_board (bno, title, content, writer) values (seq_board.nextval, #{title}, #{content}, #{writer})
 	</insert>
 	
-	<select id="read" resultType="org.team.domain.BoardVO">
+	<select id="read" resultType="org.team1.domain.BoardVO">
 		select * from tbl_board where bno=#{bno}
 	</select>
 	
