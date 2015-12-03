@@ -7,7 +7,7 @@
    <!-- Content Header (Page header) -->
    <section class="content-header">
       <h1>
-         Create Page
+         Modify Page
       </h1>
       
       <hr align="left">
@@ -25,10 +25,28 @@
       <p>Title &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name ='title' value="${board.title}" ></p>
       <p>Content<input type="text" name ='content' style="height : 200px" size="50" value="${board.content}"></p>
       <p>Writer &nbsp;<input type="text" name ='writer' value="${board.writer}"></p>
-      <input type="submit" value="저장">
-   </form>
-   <form action="list">
-   <input type="submit" value="취소">
+      
+ 
+         <button type="submit" class="btn btn-primary" style="border-color: black;">저장</button>
+         <button type="submit" class="btn btn-warning" style="border-color: orange;">취소</button>
+      
+   <script>
+         $(document).ready(function(){
+            
+            var formObj= $("form[role='form']");
+            
+            $(".btn-warning").on("click",function(){
+               self.location="/board/listAll";
+            });
+            
+            $(".btn-primary").on("click",function(){
+               formObj.submit();
+            });
+            
+         });
+      
+   
+   </script>
    </form>
    
    </section>

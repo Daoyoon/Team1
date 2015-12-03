@@ -3,14 +3,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="../include/header.jsp"%>
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
+<div class="content-wrapper" >
 	<!-- Content Header (Page header) -->
-	<section class="content-header">
+	<section class="content-header" style="margin-left:5%">
 		<h1>
 			List Page <small>Control panel</small>
 		</h1>
 		<hr align="left" style="border:solid 1px #CCCCCC; width:200px;">
-		<hr align="left">
 		<ol class="breadcrumb">
 			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
 			<li class="active">Dashboard</li>
@@ -18,7 +17,7 @@
 	</section>
 
 	<!-- Main content -->
-	<section class="content">
+	<section class="content"  style="margin-left:5%">
 
 		<div class="row">
 		    
@@ -37,11 +36,11 @@
 						<div class="ratings">
 							<p class="pull-right">조회수${boardVO.hit}</p>
 							<p>
-								<span class="glyphicon glyphicon-star"></span> <span
-									class="glyphicon glyphicon-star"></span> <span
-									class="glyphicon glyphicon-star"></span> <span
-									class="glyphicon glyphicon-star"></span> <span
-									class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
 							</p>
 						</div>
 					</div>

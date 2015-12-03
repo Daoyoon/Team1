@@ -13,7 +13,6 @@
 			View Page
 		</h1>
 		<hr align="left" style="border:solid 1px #CCCCCC; width:200px;">
-		<hr align="left">
 		<ol class="breadcrumb">
 			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
 			<li class="active">Dashboard</li>
@@ -50,14 +49,12 @@
 				</div>	
 			</div>
 		</div>
+		<br>
 			<div style="width:1000px;">
-				<form action="/board/modify">
-					<input type="hidden" name="bno" value="${board.bno}">
-					<input type="submit" value="수정">
-				</form>
-				<form action="/board/delete"method="post">
-					<input type="hidden" name="bno" value="${board.bno}">
-					<input type="submit" value="삭제">
+				<form id="viewform" style="margin-left:880px" >
+				    <input type="hidden" name="bno" value="${board.bno}">
+				    <input id="mod" type="button" value="수정">
+				    <input id="del" type="button" value="삭제">
 				</form>
 			</div>
 	</section>
@@ -74,8 +71,18 @@
 </div>
 
 <%@include file="../include/footer.jsp"%>
+
 <script>
- 
- </script>
+    var target = $("#viewform")[0];
+    $("#mod").click(function(){
+        target.action="/board/modify";
+        target.submit();
+    });
+    $("#del").click(function(){
+        target.action="/board/delete";
+        target.method="post";
+        target.submit();
+    });
+</script>
 </body>
 </html>
