@@ -20,15 +20,15 @@
    <!-- Main content -->
    <section class="content">
 
-      <form action="/board/create" method="post">
+       <form action="/board/create" method="post">
 	      <p>Title<input type="text" name ='title' ></p>
 	      <p>Content<input type="text" name ='content' style="height : 200px; width:1000px;" size="50"></p>
 	      <p>Writer<input type="text" name ='writer'></p>
-      	<input type="submit" value="저장">
-  	  </form>
-   <form action="list">
-   <input type="submit" value="취소">
-   </form>
+      	  <input type="submit" value="저장">
+  	   </form>
+	   <form action="list">
+	   	  <input type="submit" value="취소">
+	   </form>
    
    </section>
    <!-- /.content -->

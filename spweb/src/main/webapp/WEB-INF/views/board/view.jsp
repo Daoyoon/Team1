@@ -50,40 +50,28 @@
 				</div>	
 			</div>
 		</div>
-		<p><br></p>
-		<div style="margin:0 360px 0 360px;width:1000px; padding-top:0px;">
-			<div style="width:280px" >
-				<ul style="width:102;height:70px;">
-				<li style="list-style:none">
-				<img src="img/like.png">
-				</li>
-				</ul>
-	    	</div>
-	    	<div style="width:280px">
-	    		<ul style="margin-left:150px; width:102;height:70px;">
-				<li style="list-style:none">
-				<img src="img/unlike.png">
-				</li>
-				</ul>
-	    	</div>
-		</div>
-			<div>
-				<form action="/board/modify" >
+			<div style="width:1000px;">
+				<form action="/board/modify">
 					<input type="hidden" name="bno" value="${board.bno}">
 					<input type="submit" value="수정">
 				</form>
-				<form action="/board/delete" method="post">
+				<form action="/board/delete"method="post">
 					<input type="hidden" name="bno" value="${board.bno}">
 					<input type="submit" value="삭제">
 				</form>
 			</div>
-
-
-		</div>
 	</section>
-	<!-- /.content -->
+	<section class="content" style="margin-left:10%">
+		<div style="width:1000px" align="center">
+		<span>
+			<img src="img/like.png" width="50px">
+	    </span>
+	    <span>		
+			<img src="img/unlike.png" width="50px">	
+	    </span>
+	    </div>
+	</section>
 </div>
-<!-- /.content-wrapper -->
 
 <%@include file="../include/footer.jsp"%>
 <script>
