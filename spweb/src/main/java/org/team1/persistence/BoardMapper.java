@@ -7,4 +7,6 @@ import org.team1.domain.BoardVO;
 public interface BoardMapper extends CRUDMapper<BoardVO, Integer> {
 
 	public List<BoardVO> listpage() throws Exception;
+	
+	public void hit(Integer bno)throws Exception;
 }

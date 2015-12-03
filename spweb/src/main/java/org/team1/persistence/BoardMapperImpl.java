@@ -14,4 +14,11 @@ public class BoardMapperImpl extends AbstractCRUDMapper<BoardVO, Integer> implem
 		return session.selectList(namespace+".listpage");
 	}
 
+	@Override
+	public void hit(Integer bno) throws Exception {
+		
+		session.update(namespace+".hit",bno);
+		
+	}
+
 }

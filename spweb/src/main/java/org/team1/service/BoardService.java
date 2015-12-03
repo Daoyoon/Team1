@@ -19,6 +19,8 @@ public interface BoardService<V, K> {
    
    
    public List<V> listpage() throws Exception;
+   
+   public void hit(K key)throws Exception;
 
 
 }

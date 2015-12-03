@@ -11,43 +11,49 @@ import org.team1.persistence.BoardMapper;
 @Service
 public class BoardServiceImpl implements BoardService<BoardVO, Integer> {
 
-   @Inject
-   private BoardMapper mapper;   
-   
-   @Override
-   public List<BoardVO> listAll() throws Exception {
-      
-      return mapper.listAll();
-   }
-   
-   @Override
-   public List<BoardVO> listpage() throws Exception {
-      
-      return mapper.listpage();
-   }
-   
+	@Inject
+	private BoardMapper mapper;
 
-   @Override
-   public void create(BoardVO vo) throws Exception {
-      mapper.create(vo);
-      
-   }
+	@Override
+	public List<BoardVO> listAll() throws Exception {
 
-   @Override
-   public BoardVO read(Integer bno) throws Exception {
-      
-      return mapper.read(bno);
-   }
+		return mapper.listAll();
+	}
 
-   @Override
-   public void delete(Integer bno) throws Exception {
-      mapper.delete(bno);
-      
-   }
+	@Override
+	public List<BoardVO> listpage() throws Exception {
 
-   @Override
-   public void update(BoardVO vo) throws Exception {
-      mapper.update(vo);
-      
-   }
+		return mapper.listpage();
+	}
+
+	@Override
+	public void create(BoardVO vo) throws Exception {
+		mapper.create(vo);
+
+	}
+
+	@Override
+	public BoardVO read(Integer bno) throws Exception {
+
+		return mapper.read(bno);
+	}
+
+	@Override
+	public void delete(Integer bno) throws Exception {
+		mapper.delete(bno);
+
+	}
+
+	@Override
+	public void update(BoardVO vo) throws Exception {
+		mapper.update(vo);
+
+	}
+
+	@Override
+	public void hit(Integer bno) throws Exception {
+		
+		mapper.hit(bno);
+
+	}
 }

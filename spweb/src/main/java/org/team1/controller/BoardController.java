@@ -37,7 +37,7 @@ public class BoardController {
 	public void view(int bno,Model model)throws Exception{
 	
 	System.out.println(bno);
-		
+	service.hit(bno);	
 	model.addAttribute("board", service.read(bno));
 		
 //		return "/board/view";
