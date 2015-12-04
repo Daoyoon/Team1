@@ -58,7 +58,7 @@
                 <ul class="pagination">
                       <c:if test="${pagemaker.prev}">
                     <li>
-                        <a href="/board/list?page=${pagemaker.starpage - 1}">«</a>
+                        <a href="/board/list?page=${pagemaker.startpage - 1}">«</a>
                     </li>
                     </c:if>
                     <c:forEach var="x" begin="${pagemaker.startpage}" end="${pagemaker.endpage}" >

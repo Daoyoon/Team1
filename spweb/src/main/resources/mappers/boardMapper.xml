@@ -11,7 +11,10 @@
 	<resultMap type="org.team1.domain.BoardVO" id="resultset"></resultMap>
 	
 	<select id="listpage" resultMap="resultlist">
-		select * from tbl_board where bno>100000
+	<![CDATA[
+	
+		select * from (select bno,title,content, writer, regdate, updatedate, hit,rownum rn from (select * from tbl_board order by bno desc) where rownum <= (#{page}* 12)) where rn> (#{page}-1)*12
+		]]>  	
 	</select>
 	<resultMap type="org.team1.domain.BoardVO" id="resultlist"></resultMap>
 	
