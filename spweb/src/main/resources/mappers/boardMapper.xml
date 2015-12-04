@@ -4,17 +4,44 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.team1.persistence.BoardMapper">
-
-	<select id="listAll" resultMap="resultset">
+<sql id="cri">
+	<if test="searchType == 't'.toString()">
+		and title like '%'||#{keyword}||'%'
+	</if>
+	<if test="searchType == 'w'.toString()">
+		and writer like '%'||#{keyword}||'%'
+	</if>
+	<if test="searchType == 'c'.toString()">
+		and content like '%'||#{keyword}||'%'
+	</if>
+	<if test="searchType == 'tc'.toString()">
+		and (title like '%'||#{keyword}||'%' or content like '%'||#{keyword}||'%')
+	</if>
+	<if test="searchType == 'cw'.toString()">
+		and (content like '%'||#{keyword}||'%' or writer like '%'||#{keyword}||'%') 
+	</if>
+	<if test="searchType == 'tcw'.toString()">
+		and (title like '%'||#{keyword}||'%' or content like '%'||#{keyword}||'%' or writer like '%'||#{keyword}||'%') 
+	</if>	
+</sql>
+	
+	<select id="listAll" resultType="org.team1.domain.BoardVO">
 		select * from tbl_board
 	</select>
-	<resultMap type="org.team1.domain.BoardVO" id="resultset"></resultMap>
-	<select id="listpage" resultMap="resultset">
-	<![CDATA[
 	
-		select * from (select bno,title,content, writer, regdate, updatedate, hit,rownum rn from (select * from tbl_board order by bno desc) where rownum <= (#{page}* 12)) where rn> (#{page}-1)*12
+	<select id="listpage" resultType="org.team1.domain.BoardVO">
+	<![CDATA[
+			select * from (select bno,title,content, writer, regdate, updatedate, hit,rownum rn from (select * from tbl_board order by bno desc) where rownum <= (#{page}* 15)) where rn> (#{page}-1)*15
 		]]>  	
 	</select>
+	
+	<select id="searchCount" resultType="int">
+	<![CDATA[
+		select count(*) from tbl_board where bno > 0
+	]]>
+	<include refid="cri"></include>
+	</select>
+	
 	<select id="search" resultType="org.team1.domain.BoardVO">
 		<![CDATA[
 			select * 
@@ -25,41 +52,31 @@
 			  from tbl_board
 			  where bno > 0
 			]]>
-				<if test="searchType == 't'.toString()">
-					and title like '%'||#{keyword}||'%'
-				</if>			
+				<include refid="cri"></include>		
 			
 	 <![CDATA[
 			  
 			  and rownum <= #{pageNo} * #{perPage}
 			)
-			where rn> #{pageNo} - 1 * #{perPage}
+			where rn> (#{pageNo} - 1) * #{perPage}
 		]]>
-	</select>	
-	
-	
+	</select>
 	<insert id="create">
 		insert into tbl_board (bno, title, content, writer) values (seq_board.nextval, #{title}, #{content}, #{writer})
 	</insert>
-	
 	<select id="read" resultType="org.team1.domain.BoardVO">
 		select * from tbl_board where bno=#{bno}
 	</select>
-	
 	<update id="update">
 		update tbl_board set title = #{title}, content = #{content},writer = #{writer}, updatedate = sysdate where bno=#{bno}
 	</update>
-	
 	<delete id="delete">
 		delete from tbl_board where bno=#{bno}
 	</delete>
-	
 	<update id="hit">
 		update tbl_board set hit=hit+1 where bno=#{bno}
 	</update>
-	
 	<select id="totalcount" resultType="int">
 		select count(*) from tbl_board
 	</select>
-	
 </mapper>

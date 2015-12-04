@@ -10,12 +10,6 @@ import org.team1.domain.Criteria;
 public class BoardMapperImpl extends AbstractCRUDMapper<BoardVO, Integer> implements BoardMapper {
 
 	@Override
-	public List<BoardVO> listpage(int page) throws Exception {
-
-		return session.selectList(namespace+".listpage",page);
-	}
-
-	@Override
 	public void hit(Integer bno) throws Exception {
 		
 		session.update(namespace+".hit",bno);
@@ -23,8 +17,8 @@ public class BoardMapperImpl extends AbstractCRUDMapper<BoardVO, Integer> implem
 	}
 
 	@Override
-	public int totalcount() throws Exception {
-		return session.selectOne(namespace+".totalcount");
+	public int searchCount(Criteria cri) throws Exception {
+		return session.selectOne(namespace+".searchCount",cri);
 		
 	}
 

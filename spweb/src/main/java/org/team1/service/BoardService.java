@@ -17,11 +17,9 @@ public interface BoardService<V, K> {
    
    public void update(V vo)throws Exception;
     
-   public List<V> listpage(int page) throws Exception;
-   
    public void hit(K key)throws Exception;
 
-   public int totalcount() throws Exception;
+   public int searchCount(Criteria cri) throws Exception;
 
    public List<V> search(Criteria cri) throws Exception;
 }

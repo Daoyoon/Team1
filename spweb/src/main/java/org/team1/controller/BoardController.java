@@ -8,10 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.team1.domain.BoardVO;
 import org.team1.domain.Criteria;
-import org.team1.domain.PageMaker;
 import org.team1.service.BoardService;
 
 @Controller
@@ -25,17 +23,20 @@ public class BoardController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
-	@RequestMapping(value="/list", method = RequestMethod.GET)
-	public void listAll(@RequestParam(value="page",required=false) Integer page,Model model)throws Exception{
-		logger.info("list........");
-		PageMaker pagemaker = new PageMaker(page, service.totalcount());
-		System.out.println(pagemaker.toString());
-		model.addAttribute("list",service.listpage(pagemaker.getPage()));
-		model.addAttribute("pagemaker",pagemaker);
-//		model.addAttribute("list", service.listAll());
-		
-//		return "/board/list";
-	}
+//	@RequestMapping(value="/list", method = RequestMethod.GET)
+//	public void listAll(@RequestParam(value="page",required=false) Integer page,Model model)throws Exception{
+//		logger.info("list........");
+//		
+//		logger.info("재현이형 사랑합니다");
+//		Criteria cri = new Criteria();
+//		PageMaker pagemaker = new PageMaker(page, service.searchCount(cri));
+//		System.out.println(pagemaker.toString());
+//		model.addAttribute("list",service.listpage(pagemaker.getPage()));
+//		model.addAttribute("pagemaker",pagemaker);
+////		model.addAttribute("list", service.listAll());
+//		
+////		return "/board/list";
+//	}
 	
 	@RequestMapping(value="/view", method = RequestMethod.GET)
 	public void view(int bno,Model model)throws Exception{
@@ -75,10 +76,12 @@ public class BoardController {
 		return "redirect:/board/list";
 	}
 	
-	@RequestMapping(value="/slist", method = RequestMethod.GET)
-	public void searchlist(@ModelAttribute("cri") Criteria cri) throws Exception{
+	@RequestMapping(value="/list", method = RequestMethod.GET)
+	public void searchlist(@ModelAttribute("cri") Criteria cri,Model model) throws Exception{
 		logger.info("=============");
+		cri.setTotalCount(service.searchCount(cri));
 		logger.info(cri.toString());
 		logger.info("=============");
+		model.addAttribute("list",service.search(cri)); 
 	}
 }

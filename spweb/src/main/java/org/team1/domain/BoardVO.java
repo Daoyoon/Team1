@@ -11,6 +11,7 @@ public class BoardVO {
 	private Date regdate;
 	private Date updatedate;
 	private Integer hit;
+	
 	public Integer getBno() {
 		return bno;
 	}

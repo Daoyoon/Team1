@@ -7,11 +7,9 @@ import org.team1.domain.Criteria;
 
 public interface BoardMapper extends CRUDMapper<BoardVO, Integer> {
 
-	public List<BoardVO> listpage(int page) throws Exception;
-	
 	public void hit(Integer bno)throws Exception;
 	
-	public int totalcount() throws Exception;
+	public int searchCount(Criteria cri) throws Exception;
 	
 	public List<BoardVO> search(Criteria cri) throws Exception;
 }

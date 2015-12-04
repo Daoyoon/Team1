@@ -21,11 +21,6 @@ public class BoardServiceImpl implements BoardService<BoardVO, Integer> {
 	}
 
 	@Override
-	public List<BoardVO> listpage(int page) throws Exception {
-		return mapper.listpage(page);
-	}
-
-	@Override
 	public void create(BoardVO vo) throws Exception {
 		mapper.create(vo);
 	}
@@ -51,8 +46,8 @@ public class BoardServiceImpl implements BoardService<BoardVO, Integer> {
 	}
 
 	@Override
-	public int totalcount() throws Exception {
-		return mapper.totalcount();
+	public int searchCount(Criteria cri) throws Exception {
+		return mapper.searchCount(cri);
 		
 	}
 

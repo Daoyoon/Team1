@@ -2,7 +2,7 @@ package org.team1.domain;
 
 public class PageMaker {
 
-	private int page;
+	private int pageNo;
 	private int startpage;
 	private int endpage;
 	private int totalCount;
@@ -16,22 +16,22 @@ public class PageMaker {
 	private boolean prev;
 	
 	
-	public PageMaker(Integer page,Integer totalCount) {
+	public PageMaker(Integer pageNo,Integer totalCount) {
 		this.next=true;
 		this.prev=false;
-		this.perListNum=12;
+		this.perListNum=15;
 		this.perPagenum=5;
-		makeCriteria(page,totalCount);
+		makePage(pageNo,totalCount);
 	}
 
 
-	private void makeCriteria(Integer page, Integer totalCount) {
-		if(page==null){
-			this.page=1;
+	private void makePage(Integer pageNo, Integer totalCount) {
+		if(pageNo==null){
+			this.pageNo=1;
 		}else{
-			this.page=page;
+			this.pageNo=pageNo;
 		}
-		this.endpage=(int)((Math.ceil(this.page/perPagenum))*perPagenum);
+		this.endpage=(int)((Math.ceil(this.pageNo/perPagenum))*perPagenum);
 		this.startpage = (int) (endpage-perPagenum+1);
 		
 		if(startpage > 1){
@@ -54,12 +54,12 @@ public class PageMaker {
 		}
 
 	public int getPage() {
-		return page;
+		return pageNo;
 	}
 
 
 	public void setPage(int page) {
-		this.page = page;
+		this.pageNo = page;
 	}
 
 
@@ -135,7 +135,7 @@ public class PageMaker {
 
 	@Override
 	public String toString() {
-		return "PageMaker [page=" + page + ", startpage=" + startpage + ", endpage=" + endpage + ", totalCount="
+		return "PageMaker [pageNo=" + pageNo + ", startpage=" + startpage + ", endpage=" + endpage + ", totalCount="
 				+ totalCount + ", perListNum=" + perListNum + ", perPagenum=" + perPagenum + ", next=" + next
 				+ ", prev=" + prev + "]";
 	}
