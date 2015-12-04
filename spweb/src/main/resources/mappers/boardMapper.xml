@@ -9,14 +9,34 @@
 		select * from tbl_board
 	</select>
 	<resultMap type="org.team1.domain.BoardVO" id="resultset"></resultMap>
-	
-	<select id="listpage" resultMap="resultlist">
+	<select id="listpage" resultMap="resultset">
 	<![CDATA[
 	
 		select * from (select bno,title,content, writer, regdate, updatedate, hit,rownum rn from (select * from tbl_board order by bno desc) where rownum <= (#{page}* 12)) where rn> (#{page}-1)*12
 		]]>  	
 	</select>
-	<resultMap type="org.team1.domain.BoardVO" id="resultlist"></resultMap>
+	<select id="search" resultType="org.team1.domain.BoardVO">
+		<![CDATA[
+			select * 
+			from
+			(
+			  select /*+index_desc(tbl_board pk_board)*/
+			  rownum rn, bno, title, content, writer, hit 
+			  from tbl_board
+			  where bno > 0
+			]]>
+				<if test="searchType == 't'.toString()">
+					and title like '%'||#{keyword}||'%'
+				</if>			
+			
+	 <![CDATA[
+			  
+			  and rownum <= #{pageNo} * #{perPage}
+			)
+			where rn> #{pageNo} - 1 * #{perPage}
+		]]>
+	</select>	
+	
 	
 	<insert id="create">
 		insert into tbl_board (bno, title, content, writer) values (seq_board.nextval, #{title}, #{content}, #{writer})

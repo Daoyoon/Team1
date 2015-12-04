@@ -2,7 +2,7 @@ package org.team1.service;
 
 import java.util.List;
 
-import org.team1.domain.BoardVO;
+import org.team1.domain.Criteria;
 
 public interface BoardService<V, K> {
 
@@ -11,7 +11,7 @@ public interface BoardService<V, K> {
 
    public void create(V vo)throws Exception;
    
-   public BoardVO read(K key)throws Exception;
+   public V read(K key)throws Exception;
    
    public void delete(K key)throws Exception;
    
@@ -23,4 +23,5 @@ public interface BoardService<V, K> {
 
    public int totalcount() throws Exception;
 
+   public List<V> search(Criteria cri) throws Exception;
 }

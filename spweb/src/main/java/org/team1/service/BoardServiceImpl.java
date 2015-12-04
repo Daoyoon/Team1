@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 import org.team1.domain.BoardVO;
+import org.team1.domain.Criteria;
 import org.team1.persistence.BoardMapper;
 
 @Service
@@ -53,5 +54,10 @@ public class BoardServiceImpl implements BoardService<BoardVO, Integer> {
 	public int totalcount() throws Exception {
 		return mapper.totalcount();
 		
+	}
+
+	@Override
+	public List<BoardVO> search(Criteria cri) throws Exception {
+		return mapper.search(cri);
 	}
 }
