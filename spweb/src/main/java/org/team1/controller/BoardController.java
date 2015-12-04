@@ -78,10 +78,10 @@ public class BoardController {
 	
 	@RequestMapping(value="/list", method = RequestMethod.GET)
 	public void searchlist(@ModelAttribute("cri") Criteria cri,Model model) throws Exception{
-		logger.info("=============");
 		cri.setTotalCount(service.searchCount(cri));
+		logger.info("=============");
 		logger.info(cri.toString());
 		logger.info("=============");
-		model.addAttribute("list",service.search(cri)); 
+		model.addAttribute("list",service.search(cri));
 	}
 }

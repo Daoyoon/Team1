@@ -15,8 +15,8 @@ public class Criteria {
 		this.pageNo = 1;
 		this.perPage = 15.0;
 		this.perPageNum = 5.0;
-		this.searchType="'a'";
-		this.keyword="' '";
+		this.searchType="";
+		this.keyword="";
 	}
 	public int getPageNo() {
 		return pageNo;
@@ -28,13 +28,13 @@ public class Criteria {
 		return searchType;
 	}
 	public void setSearchType(String searchType) {
-		this.searchType = "'"+searchType+"'";
+		this.searchType = searchType;
 	}
 	public String getKeyword() {
 		return keyword;
 	}
 	public void setKeyword(String keyword) {
-		this.keyword = "'"+keyword+"'";
+		this.keyword = keyword;
 	}
 	public int getTotalCount() {
 		return totalCount;
@@ -56,8 +56,8 @@ public class Criteria {
 	}
 	@Override
 	public String toString() {
-		return "Criteria [pageNo=" + pageNo + ", searchType=" + searchType + ", keyword=" + keyword + ", totalCount="
-				+ totalCount + ", perPage=" + perPage + ", perPageNum=" + perPageNum + "]";
+		return "{pageNo:" + pageNo + ", searchType:'" + searchType + "', keyword:'" + keyword + "', totalCount:"
+				+ totalCount + ", perPage:" + perPage + ", perPageNum:" + perPageNum + "}";
 	}
 
 	
