@@ -44,9 +44,9 @@ public class PageMaker {
 		}else{
 			this.totalCount=totalCount;
 		}
-		if(endpage*perPagenum >= this.totalCount){
+		if(endpage*perListNum >= this.totalCount){
 			this.next=false;
-			this.endpage=(int)((Math.ceil((Math.ceil(totalCount/perListNum))/perPagenum))*perPagenum);
+			this.endpage=(int)(Math.ceil(totalCount/perListNum));
 		}
 		
 		}
