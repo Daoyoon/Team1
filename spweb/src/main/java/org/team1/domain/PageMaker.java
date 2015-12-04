@@ -8,7 +8,7 @@ public class PageMaker {
 	private int totalCount;
 	
 	//1페이지당 뜨는 화면 수
-	private int perListNum;
+	private double perListNum;
 	//페이지 몇개 밑에 뜨게 할지
 	private double perPagenum;
 	
@@ -40,12 +40,14 @@ public class PageMaker {
 		if(totalCount == null){
 			this.totalCount = 0;
 			this.endpage=1;
+			this.next=false;
 			return;
 		}else{
 			this.totalCount=totalCount;
 		}
 		if(endpage*perListNum >= this.totalCount){
 			this.next=false;
+			System.out.println(totalCount/perListNum);
 			this.endpage=(int)(Math.ceil(totalCount/perListNum));
 		}
 		
@@ -91,7 +93,7 @@ public class PageMaker {
 	}
 
 
-	public int getPerListNum() {
+	public double getPerListNum() {
 		return perListNum;
 	}
 
