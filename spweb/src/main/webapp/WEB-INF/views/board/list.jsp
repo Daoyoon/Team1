@@ -99,6 +99,7 @@
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+
 <script>
 $(document).ready(function () {
     
@@ -128,13 +129,7 @@ $(document).ready(function () {
         criform.attr("action","/board/view").submit(); 
     });
     $("#searchType option[value="+cri.searchType+"]").attr("selected", "true")
-
-    /**
-     * 
-     */
     });
-
-
 </script>
 </body>
 </html>
