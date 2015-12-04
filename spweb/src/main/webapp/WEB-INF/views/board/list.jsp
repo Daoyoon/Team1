@@ -19,7 +19,7 @@
 	<!-- Main content -->
 	<section class="content">
 
-		<div class="row">
+		<div class="row"  id="view">
 
 			<c:forEach var="boardVO" items="${list}">
 				<div class="col-sm-4 col-lg-4 col-md-4" style="width: 350px;">
@@ -29,7 +29,7 @@
 						<div class="caption">
 							<h4 class="pull-right">[댓글수]</h4>
 							<h4>
-								<a href="/board/view?bno=${boardVO.bno}">${boardVO.title}</a>
+								<a href="${boardVO.bno}">${boardVO.title}</a>
 							</h4>
 							<p>${boardVO.content}</p>
 						</div>
@@ -55,14 +55,19 @@
 		</div>
 	</section>
 	<!-- /.content -->
+	<!-- cridata -->
 	<form id="cri">
+		
 		<input type="hidden" name="pageNo" value="${cri.pageNo}" >
 		<input type="hidden" name="searchType" value="${cri.searchType}">
 		<input type="hidden" name="keyword" value="${cri.keyword}">
 		<input type="hidden" name="totalCount"  value="${cri.totalCount}">
 		<input type="hidden" name="perPage"  value="${cri.perPage}">
-		<input type="hidden" name="perPageNum"  value="${cri.perPageNum}">		
+		<input type="hidden" name="perPageNum"  value="${cri.perPageNum}">
+		<input type="hidden" name="bno" >		
 	</form>
+	<!-- /cridata -->
+	
 	<div class="row text-center">
 		<div class="col-lg-12">
 			<form id="searchform">
@@ -76,8 +81,7 @@
 				<option value="tcw">전체</option>
 			</select>
 			<input id="keyword" type="text" name="keyword">
-			<button value="검색" id="search" size="50px">
-			</button>
+			<button value="검색" id="search" size="50px">	</button>
 			</form>
 		</div>
 		<div class="col-lg-12">
@@ -105,16 +109,23 @@ $(document).ready(function () {
     $("#keyword").val(cri.keyword);
     $("#pageUL").html(makePage(cri));
     console.log($("#pageUL"))
-	var criform = $("#cri");
+	
+    var criform = $("#cri");
     
     $("#pageUL").on("click","li a", function(event){
-    	
     	event.preventDefault();
         console.log(this);
         var targetPage = $(this).attr("href");
         console.log(targetPage);
         criform[0][0].value = targetPage;
         criform.attr("action","/board/list").submit(); 
+    });
+    $("#view div div div h4 a").on("click",function(event){
+    	event.preventDefault();
+        console.log(this);
+        var targetPage = $(this).attr("href");
+        criform[0][6].value = targetPage;        
+        criform.attr("action","/board/view").submit(); 
     });
     $("#searchType option[value="+cri.searchType+"]").attr("selected", "true")
 

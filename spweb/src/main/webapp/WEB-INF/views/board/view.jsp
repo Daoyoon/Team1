@@ -69,6 +69,16 @@
 	    </span>
 	    </div>
 	</section>
+		<form id="cri">
+		
+		<input type="hidden" name="pageNo" value="${cri.pageNo}" >
+		<input type="hidden" name="searchType" value="${cri.searchType}">
+		<input type="hidden" name="keyword" value="${cri.keyword}">
+		<input type="hidden" name="totalCount"  value="${cri.totalCount}">
+		<input type="hidden" name="perPage"  value="${cri.perPage}">
+		<input type="hidden" name="perPageNum"  value="${cri.perPageNum}">
+		<input type="hidden" name="bno" >		
+	</form>
 </div>
 
 <%@include file="../include/footer.jsp"%>
@@ -76,8 +86,8 @@
 <script>
     var target = $("#viewform")[0];
     $("#list").click(function(){
-        target.action="/board/list";
-        target.submit();
+        var criform = $("#cri");
+    	criform.attr("action","/board/list").submit();
     });
     $("#mod").click(function(){
         target.action="/board/modify";

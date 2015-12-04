@@ -39,7 +39,7 @@ public class BoardController {
 //	}
 	
 	@RequestMapping(value="/view", method = RequestMethod.GET)
-	public void view(int bno,Model model)throws Exception{
+	public void view(int bno,@ModelAttribute("cri")Criteria cri,Model model)throws Exception{
 	
 	System.out.println(bno);
 	service.hit(bno);	
