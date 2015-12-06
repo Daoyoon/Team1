@@ -81,7 +81,7 @@
 				<option value="tcw">전체</option>
 			</select>
 			<input id="keyword" type="text" name="keyword">
-			<button value="검색" id="search" size="50px">	</button>
+			<button id="search" >검색</button>
 			</form>
 		</div>
 		<div class="col-lg-12">

@@ -20,7 +20,7 @@ public class PageMaker {
 		this.next=true;
 		this.prev=false;
 		this.perListNum=15;
-		this.perPagenum=5;
+		this.perPagenum=10;
 		makePage(pageNo,totalCount);
 	}
 
